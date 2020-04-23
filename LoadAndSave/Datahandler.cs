@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.IO;
 namespace LoadAndSave
 {
-   public class Datahandler
+    public class Datahandler
     {
         public List<Person> persons = new List<Person>();
 
@@ -18,8 +18,8 @@ namespace LoadAndSave
 
             Console.WriteLine("Anna henkilön sukunimi: ");
             string lastName = Console.ReadLine();
-           
-            
+
+
 
             Person toReturn = new Person(name, lastName);
 
@@ -37,7 +37,7 @@ namespace LoadAndSave
 
             return person;
         }
- 
+
         public void PersonList()
         {
             if (this.persons.Count == 0)
@@ -51,9 +51,24 @@ namespace LoadAndSave
                 Console.Clear();
                 Console.WriteLine($"{i + 1}. {this.persons[i].name} {this.persons[i].lastName}");
             }
-          
+
         }
 
+        public void PersonToString()
+        {
+            List<string> lines = File.ReadAllLines().ToList();
 
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+
+            lines.Add("Hessu,Hopo,Ankkalinna,false,4");
+
+            File.WriteAllLines(filePath, lines);
+
+            Console.ReadLine();
+
+        }
     }
 }

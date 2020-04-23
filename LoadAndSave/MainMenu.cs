@@ -30,9 +30,10 @@ namespace LoadAndSave
         private bool ShowMainMenu()
         {
             Console.Clear();
-            Console.WriteLine("1) Syötä uusi Persoona");
+            Console.WriteLine("1) Syötä uusi henkilö");
             Console.WriteLine("2) Tarkastele listaa");
-            Console.WriteLine("3) Exit");
+            Console.WriteLine("3) Tallenna henkilöt");
+            Console.WriteLine("4) Exit");
             Console.Write("\nValitse vaihtoehto: ");
 
             switch (Console.ReadLine())
@@ -45,7 +46,12 @@ namespace LoadAndSave
                     dataHandler.PersonList();
                     break;
 
+
                 case "3":
+                    dataHandler.PersonToString();
+                    break;
+
+                case "4":
                     return false;
 
                 default:
