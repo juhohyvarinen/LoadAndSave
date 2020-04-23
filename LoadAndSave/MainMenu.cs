@@ -48,7 +48,7 @@ namespace LoadAndSave
 
 
                 case "3":
-                    dataHandler.PersonToString();
+                    FileHandler.PersonToString();
                     break;
 
                 case "4":

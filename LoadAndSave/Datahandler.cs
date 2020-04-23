@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.IO;
+using System.Linq;
 namespace LoadAndSave
 {
     public class Datahandler
     {
         public List<Person> persons = new List<Person>();
-
+        public string rootPath = @"E:\uusikansio";
 
         public Person NewPerson()
         {
@@ -54,21 +56,7 @@ namespace LoadAndSave
 
         }
 
-        public void PersonToString()
-        {
-            List<string> lines = File.ReadAllLines().ToList();
-
-            foreach (string line in lines)
-            {
-                Console.WriteLine(line);
-            }
-
-            lines.Add("Hessu,Hopo,Ankkalinna,false,4");
-
-            File.WriteAllLines(filePath, lines);
-
-            Console.ReadLine();
-
-        }
+       
+       
     }
 }

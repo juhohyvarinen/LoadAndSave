@@ -7,8 +7,26 @@ namespace LoadAndSave
 {
     public class FileHandler
     {
-        string filePath = @"E:\Testikansio\kansio3\tekstitiedosto";
-          
-        
+        public string filePath = @"E:\Testikansio\kansio3\tekstitiedosto";
+
+        public void PersonTostring()
+        {
+
+            List<string> lines = File.ReadAllLines(filePath).ToList();
+
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+
+            lines.Add("Hessu,Hopo,Ankkalinna,false,4");
+
+            File.WriteAllLines(filePath, lines);
+
+            Console.ReadLine();
+            
+        }
     }
 }
+        
+
